@@ -34,6 +34,13 @@ namespace CowboyCafe.Data
         /// <summary>
         /// The special instructions for how to make the ribs (there are no special instructions provided)
         /// </summary>
-        public List SpecialInstructions {}
+        public List<string> SpecialInstructions
+        {
+            get
+            {
+                var instructions = new List<string>();
+                return instructions;
+            }
+        }
     }
 }

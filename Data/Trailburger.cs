@@ -7,7 +7,7 @@ namespace CowboyCafe.Data
     /// <summary>
     /// The information for the Trailburger entree
     /// </summary>
-    public class Trailburger
+    public class TrailBurger
     {
         /// <summary>
         /// The price of the burger
@@ -71,18 +71,32 @@ namespace CowboyCafe.Data
             set { cheese = value; }
         }
 
+        private bool bun = true;
+        /// <summary>
+        /// If a bun should come with the burger
+        /// </summary>
+        public bool Bun
+        {
+            get { return bun; }
+            set { bun = value; }
+        }
+
         /// <summary>
         /// The special instructions for preparing the burger
         /// </summary>
-        public list SpecialInstructions
+        public List<string> SpecialInstructions
         {
             get
             {
-                var instructions = new list();
-                if(!ketchup) { instructions.Add("Hold ketchup"); }
-                if(!mustard) { instructions.Add("Hold mustard"); }
-                if(!pickle) { instructions.Add("Hold pickle"); }
-                if(!cheese) { instructions.Add("Hold cheese"); }
+                var instructions = new List<string>();
+
+                if (!ketchup) { instructions.Add("hold ketchup"); }
+                if(!mustard) { instructions.Add("hold mustard"); }
+                if(!pickle) { instructions.Add("hold pickle"); }
+                if(!cheese) { instructions.Add("hold cheese"); }
+                if(!bun) { instructions.Add("hold bun"); }
+
+                return instructions;
             }
         }
     }

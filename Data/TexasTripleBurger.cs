@@ -71,6 +71,16 @@ namespace CowboyCafe.Data
             set { cheese = value; }
         }
 
+        private bool bun = true;
+        /// <summary>
+        /// If a bun should come with the burger
+        /// </summary>
+        public bool Bun
+        {
+            get { return bun; }
+            set { bun = value; }
+        }
+
         private bool tomato = true;
         /// <summary>
         /// If tomatoes should be on the burger
@@ -124,20 +134,24 @@ namespace CowboyCafe.Data
         /// <summary>
         /// The special instructions for preparing the burger
         /// </summary>
-        public list SpecialInstructions
+        public List<string> SpecialInstructions
         {
             get
             {
-                var instructions = new list();
-                if (!ketchup) { instructions.Add("Hold ketchup"); }
-                if (!mustard) { instructions.Add("Hold mustard"); }
-                if (!pickle) { instructions.Add("Hold pickle"); }
-                if (!cheese) { instructions.Add("Hold cheese"); }
-                if (!tomato) { instructions.Add("Hold tomato"); }
-                if (!lettuce) { instructions.Add("Hold lettuce"); }
-                if (!mayo) { instructions.Add("Hold mayo"); }
-                if (!bacon) { instructions.Add("Hold bacon"); }
-                if(!egg) { instructions.Add("Hold egg"); }
+                var instructions = new List<string>();
+
+                if (!ketchup) { instructions.Add("hold ketchup"); }
+                if (!mustard) { instructions.Add("hold mustard"); }
+                if (!pickle) { instructions.Add("hold pickle"); }
+                if (!cheese) { instructions.Add("hold cheese"); }
+                if (!bun) { instructions.Add("hold bun"); }
+                if (!tomato) { instructions.Add("hold tomato"); }
+                if (!lettuce) { instructions.Add("hold lettuce"); }
+                if (!mayo) { instructions.Add("hold mayo"); }
+                if (!bacon) { instructions.Add("hold bacon"); }
+                if(!egg) { instructions.Add("hold egg"); }
+
+                return instructions;
             }
         }
     }

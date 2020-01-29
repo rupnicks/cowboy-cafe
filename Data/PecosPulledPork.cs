@@ -54,13 +54,16 @@ namespace CowboyCafe.Data
         /// <summary>
         /// Special instructions for the preparation of the pulled pork
         /// </summary>
-        public list SpecialInstructions
+        public List<string> SpecialInstructions
         {
             get
             {
-                var instructions = new list();
-                if(!bread) { instructions.Add("Hold bread"); }
-                if (!pickle) { instructions.Add("Hold pickle"); }
+                var instructions = new List<string>();
+
+                if (!bread) { instructions.Add("hold bread"); }
+                if (!pickle) { instructions.Add("hold pickle"); }
+
+                return instructions;
             }
         }
     }
