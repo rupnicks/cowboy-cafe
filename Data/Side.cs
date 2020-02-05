@@ -1,4 +1,10 @@
-﻿using System;
+﻿/*
+ * Author: Nathan Bean
+ * Class: Side.cs
+ * Purpose: Base class for the side dishes
+ */
+
+using System;
 using System.Collections.Generic;
 using System.Text;
 

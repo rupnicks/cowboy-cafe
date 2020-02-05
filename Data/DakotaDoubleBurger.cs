@@ -1,4 +1,10 @@
-﻿using System;
+﻿/*
+ * Author: Samantha Rupnick
+ * Class: DakotaDouble.cs
+ * Purpose: Holds the information of the Dakota Double entree
+ */
+
+using System;
 using System.Collections.Generic;
 using System.Text;
 
@@ -7,12 +13,12 @@ namespace CowboyCafe.Data
     /// <summary>
     /// The information for the Dakota Double Burger entree
     /// </summary>
-    public class DakotaDoubleBurger
+    public class DakotaDoubleBurger : Entree
     {
         /// <summary>
         /// The price of the double burger
         /// </summary>
-        public double Price
+        public override double Price
         {
             get
             {
@@ -23,7 +29,7 @@ namespace CowboyCafe.Data
         /// <summary>
         /// The calories in the double burger
         /// </summary>
-        public uint Calories
+        public override uint Calories
         {
             get
             {
@@ -114,7 +120,7 @@ namespace CowboyCafe.Data
         /// <summary>
         /// The special instructions for preparing the burger
         /// </summary>
-        public List<string> SpecialInstructions
+        public override List<string> SpecialInstructions
         {
             get
             {

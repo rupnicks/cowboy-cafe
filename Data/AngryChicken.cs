@@ -1,4 +1,10 @@
-﻿using System;
+﻿/*
+ * Author: Samantha Rupnick
+ * Class: AngryChicken.cs
+ * Purpose: Holds the information of the Angry Chicken entree
+ */
+
+using System;
 using System.Collections.Generic;
 using System.Text;
 
@@ -7,12 +13,12 @@ namespace CowboyCafe.Data
     /// <summary>
     /// The information for the chicken sandwich entree
     /// </summary>
-    public class AngryChicken
+    public class AngryChicken : Entree
     {
         /// <summary>
         /// The price of the chicken sandwich
         /// </summary>
-        public double Price
+        public override double Price
         {
             get
             {
@@ -23,7 +29,7 @@ namespace CowboyCafe.Data
         /// <summary>
         /// The calories in the chicken sandwich
         /// </summary>
-        public uint Calories
+        public override uint Calories
         {
             get
             {
@@ -54,7 +60,7 @@ namespace CowboyCafe.Data
         /// <summary>
         /// Special instructions for the preparation of the chicken sandwich
         /// </summary>
-        public List<string> SpecialInstructions
+        public override List<string> SpecialInstructions
         {
             get
             {

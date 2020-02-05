@@ -1,7 +1,7 @@
 ﻿/*
  * Author: Samantha Rupnick
- * Class: ChiliCheeseFries.cs
- * Purpose: Holds the information of the Chili Cheese Fries side
+ * Class: BakedBeans.cs
+ * Purpose: Holds the information of the Baked Beans side
  */
 
 using System;
@@ -11,12 +11,12 @@ using System.Text;
 namespace CowboyCafe.Data
 {
     /// <summary>
-    /// Class holding information of the Chili Cheese Fries Side
+    /// Class holding information of the Baked Beans Side
     /// </summary>
-    public class ChiliCheeseFries : Side
+    public class BakedBeans : Side
     {
         /// <summary>
-        /// The calories in the different sizes of Chili Cheese Fries
+        /// The calories in the different sizes of Baked Beans
         /// </summary>
         public override uint Calories
         {
@@ -25,11 +25,11 @@ namespace CowboyCafe.Data
                 switch (Size)
                 {
                     case Size.Small:
-                        return 433;
+                        return 312;
                     case Size.Medium:
-                        return 524;
+                        return 378;
                     case Size.Large:
-                        return 610;
+                        return 410;
                     default:
                         throw new NotImplementedException();
                 }
@@ -37,7 +37,7 @@ namespace CowboyCafe.Data
         }
 
         /// <summary>
-        /// The price of the different sizes of Chili Cheese Fries
+        /// The price of the different sizes of Baked Beans
         /// </summary>
         public override double Price
         {
@@ -46,11 +46,11 @@ namespace CowboyCafe.Data
                 switch (Size)
                 {
                     case Size.Small:
-                        return 1.99;
+                        return 1.59;
                     case Size.Medium:
-                        return 2.99;
+                        return 1.79;
                     case Size.Large:
-                        return 3.99;
+                        return 1.99;
                     default:
                         throw new NotImplementedException();
                 }
