@@ -163,7 +163,7 @@ namespace CowboyCafe.Data
 
         public override string ToString()
         {
-            return "Texas Triple";
+            return "Texas Triple Burger";
         }
     }
 }

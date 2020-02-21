@@ -76,7 +76,7 @@ namespace CowboyCafe.Data
                         case Size.Medium:
                             return 11;
                         case Size.Large:
-                            return 13;
+                            return 18;
                         default:
                             throw new NotImplementedException();
                     }
@@ -104,9 +104,9 @@ namespace CowboyCafe.Data
         {
             if(!Sweet)
             {
-                return Size + " Texas Tea";
+                return Size + " Texas Plain Tea";
             }
-            return Size + " Sweet Texas Tea";
+            return Size + " Texas Sweet Tea";
         }
     }
 }

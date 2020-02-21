@@ -79,7 +79,19 @@ namespace CowboyCafe.Data
 
         public override string ToString()
         {
-            return Size + " " + Flavor + " Jerked Soda";
+            switch(Flavor)
+            {
+                case (SodaFlavor.BirchBeer):
+                    return Size + " Birch Beer Jerked Soda";
+                case (SodaFlavor.CreamSoda):
+                    return Size + " Cream Soda Jerked Soda";
+                case (SodaFlavor.OrangeSoda):
+                    return Size + " Orange Soda Jerked Soda";
+                case (SodaFlavor.RootBeer):
+                    return Size + " Root Beer Jerked Soda";
+                default:
+                    return Size + " Sarsparilla Jerked Soda";
+            }
         }
     }
 }
