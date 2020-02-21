@@ -59,17 +59,7 @@ namespace CowboyCafe.Data
 
         public override string ToString()
         {
-            switch (Size)
-            {
-                case Size.Small:
-                    return "Small Corn Dodgers";
-                case Size.Medium:
-                    return "Medium Corn Dodgers";
-                case Size.Large:
-                    return "Large Corn Dodgers";
-                default:
-                    throw new NotImplementedException();
-            }
+            return Size + " Corn Dodgers";
         }
     }
 }

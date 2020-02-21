@@ -77,5 +77,9 @@ namespace CowboyCafe.Data
             }
         }
 
+        public override string ToString()
+        {
+            return Size + " " + Flavor + " Jerked Soda";
+        }
     }
 }
