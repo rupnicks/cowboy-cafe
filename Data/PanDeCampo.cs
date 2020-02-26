@@ -57,6 +57,15 @@ namespace CowboyCafe.Data
             }
         }
 
+        public override List<string> SpecialInstructions
+        {
+            get
+            {
+                var instructions = new List<string>();
+                return instructions;
+            }
+        }
+
         public override string ToString()
         {
             return Size + " Pan de Campo";
