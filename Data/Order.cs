@@ -11,7 +11,7 @@ namespace CowboyCafe.Data
 {
     public class Order
     {
-        private uint lastOrderNumber = 0000;
+        static uint lastOrderNumber = 0;
 
         public IEnumerable<IOrderItem> Items => items;
 
