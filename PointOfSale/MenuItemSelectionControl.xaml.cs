@@ -11,156 +11,79 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 using CowboyCafe.Data;
+using CowboyCafe.Extensions;
 
 namespace PointOfSale
 {
     /// <summary>
     /// Interaction logic for MenuItemSelectionControl.xaml
     /// </summary>
-    public partial class MenuItemSelectionControl : OrderControl
+    public partial class MenuItemSelectionControl : UserControl
     {
-        List<string> items = new List<string>();
-
-        public IEnumerable<string> Items => items.ToArray();
-
         public MenuItemSelectionControl()
         {
             InitializeComponent();
-            AddCowpokeChiliButton.Click += OnAddCowpokeChiliButtonClicked;
-            AddRustlersRibsButton.Click += OnAddRustlersRibsButtonClicked;
-            AddPecosPulledPorkButton.Click += OnAddPecosPulledPorkButtonClicked;
-            AddTrailBurgerButton.Click += OnAddTrailBurgerButtonClicked;
-            AddDakotaDoubleButton.Click += OnAddDakotaDoubleButtonClicked;
-            AddTexasTripleButton.Click += OnAddTexasTripleButtonClicked;
-            AddAngryChickenButton.Click += OnAddAngryChickenButtonClicked;
-            AddBakedBeansButton.Click += OnAddBakedBeansButtonClicked;
-            AddChiliCheeseFriesButton.Click += OnAddChiliCheeseFriesButtonClicked;
-            AddCornDodgersButton.Click += OnAddCornDodgersButtonClicked;
-            AddPanDeCampoButton.Click += OnAddPanDeCampoButtonClicked;
-            AddCowboyCoffeeButton.Click += OnAddCowboyCoffeeButtonClicked;
-            AddJerkedSodaButton.Click += OnAddJerkedSodaButtonClicked;
-            AddTexasTeaButton.Click += OnAddTexasTeaButtonClicked;
-            AddWaterButton.Click += OnAddWaterButtonClicked;
         }
 
-        void OnAddCowpokeChiliButtonClicked(object sender, RoutedEventArgs e)
+        public void OnItemAddButtonClicked(object sender, RoutedEventArgs e)
         {
-            CowpokeChili Chili = new CowpokeChili();
-            string chili = Chili.ToString();
-            items.Add(chili);
-            PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("Items"));
-        }
+            var orderControl = this.FindAncestor<OrderControl>();
 
-        void OnAddRustlersRibsButtonClicked(object sender, RoutedEventArgs e)
-        {
-            RustlersRibs Ribs = new RustlersRibs();
-            string ribs = Ribs.ToString();
-            items.Add(ribs);
-            PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("Items"));
-        }
-
-        void OnAddPecosPulledPorkButtonClicked(object sender, RoutedEventArgs e)
-        {
-            PecosPulledPork Pork = new PecosPulledPork();
-            string pork = Pork.ToString();
-            items.Add(pork);
-            PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("Items"));
-        }
-
-        void OnAddTrailBurgerButtonClicked(object sender, RoutedEventArgs e)
-        {
-            TrailBurger Burger = new TrailBurger();
-            string burger = Burger.ToString();
-            items.Add(burger);
-            PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("Items"));
-        }
-
-        void OnAddDakotaDoubleButtonClicked(object sender, RoutedEventArgs e)
-        {
-            DakotaDoubleBurger Dakota = new DakotaDoubleBurger();
-            string dakota = Dakota.ToString();
-            items.Add(dakota);
-            PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("Items"));
-        }
-
-        void OnAddTexasTripleButtonClicked(object sender, RoutedEventArgs e)
-        {
-            TexasTripleBurger Triple = new TexasTripleBurger();
-            string triple = Triple.ToString();
-            items.Add(triple);
-            PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("Items"));
-        }
-
-        void OnAddAngryChickenButtonClicked(object sender, RoutedEventArgs e)
-        {
-            AngryChicken Chicken = new AngryChicken();
-            string chicken = Chicken.ToString();
-            items.Add(chicken);
-            PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("Items"));
-        }
-
-        void OnAddBakedBeansButtonClicked(object sender, RoutedEventArgs e)
-        {
-            BakedBeans Beans = new BakedBeans();
-            string beans = Beans.ToString();
-            items.Add(beans);
-            PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("Items"));
-        }
-
-        void OnAddChiliCheeseFriesButtonClicked(object sender, RoutedEventArgs e)
-        {
-            ChiliCheeseFries Fries = new ChiliCheeseFries();
-            string fries = Fries.ToString();
-            items.Add(fries);
-            PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("Items"));
-        }
-
-        void OnAddCornDodgersButtonClicked(object sender, RoutedEventArgs e)
-        {
-            CornDodgers Corn = new CornDodgers();
-            string corn = Corn.ToString();
-            items.Add(corn);
-            PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("Items"));
-        }
-
-        void OnAddPanDeCampoButtonClicked(object sender, RoutedEventArgs e)
-        {
-            PanDeCampo Campo = new PanDeCampo();
-            string campo = Campo.ToString();
-            items.Add(campo);
-            PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("Items"));
-        }
-
-        void OnAddCowboyCoffeeButtonClicked(object sender, RoutedEventArgs e)
-        {
-            CowboyCoffee Coffee = new CowboyCoffee();
-            string coffee = Coffee.ToString();
-            items.Add(coffee);
-            PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("Items"));
-        }
-
-        void OnAddJerkedSodaButtonClicked(object sender, RoutedEventArgs e)
-        {
-            JerkedSoda Soda = new JerkedSoda();
-            string soda = Soda.ToString();
-            items.Add(soda);
-            PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("Items"));
-        }
-
-        void OnAddTexasTeaButtonClicked(object sender, RoutedEventArgs e)
-        {
-            TexasTea Tea = new TexasTea();
-            string tea = Tea.ToString();
-            items.Add(tea);
-            PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("Items"));
-        }
-
-        void OnAddWaterButtonClicked(object sender, RoutedEventArgs e)
-        {
-            Water Water = new Water();
-            string water = Water.ToString();
-            items.Add(water);
-            PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("Items"));
+            if (DataContext is Order order)
+            {
+                if(sender is Button button)
+                {
+                    switch(button.Tag)
+                    {
+                        case "CowpokeChili":
+                            order.Add(new CowpokeChili());
+                            orderControl.SwapScreen(new CustomizeCowpokeChili());
+                            break;
+                        case "TrailBurger":
+                            order.Add(new TrailBurger());
+                            break;
+                        case "DakotaDouble":
+                            order.Add(new DakotaDoubleBurger());
+                            break;
+                        case "TexasTriple":
+                            order.Add(new TexasTripleBurger());
+                            break;
+                        case "AngryChicken":
+                            order.Add(new AngryChicken());
+                            break;
+                        case "PecosPulledPork":
+                            order.Add(new PecosPulledPork());
+                            break;
+                        case "RustlersRibs":
+                            order.Add(new RustlersRibs());
+                            break;
+                        case "BakedBeans":
+                            order.Add(new BakedBeans());
+                            break;
+                        case "ChiliCheeseFries":
+                            order.Add(new ChiliCheeseFries());
+                            break;
+                        case "CornDodgers":
+                            order.Add(new CornDodgers());
+                            break;
+                        case "PanDeCampo":
+                            order.Add(new PanDeCampo());
+                            break;
+                        case "CowboyCoffee":
+                            order.Add(new CowboyCoffee());
+                            break;
+                        case "JerkedSoda":
+                            order.Add(new JerkedSoda());
+                            break;
+                        case "TexasTea":
+                            order.Add(new TexasTea());
+                            break;
+                        case "Water":
+                            order.Add(new Water());
+                            break;
+                    }
+                }
+            }
         }
     }
 }

@@ -8,7 +8,5 @@
         Title="MainWindow" Height="1080" Width="1500">
     <Grid>
         <local:OrderControl/>
-        <local:MenuItemSelectionControl/>
-        <local:OrderSummaryControl/>
     </Grid>
 </Window>

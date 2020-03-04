@@ -18,34 +18,31 @@ namespace PointOfSale
     /// <summary>
     /// Interaction logic for OrderControl.xaml
     /// </summary>
-    public partial class OrderControl : INotifyPropertyChanged
+    public partial class OrderControl : UserControl
     {
-        public event PropertyChangedEventHandler PropertyChanged;
-
         public OrderControl()
         {
             InitializeComponent();
-            var data = new Order();
-            DataContext = data;
+            DataContext = new Order();
 
-            CancelOrder.Click += OnCancelButtonClicked();
-            CompleteOrder.Click += OnCompleteOrderButtonClicked();
-            ItemSelection.Click += OnItemSelectionButtonClicked();
+            //CancelOrder.Click += OnCancelButtonClicked();
+            //CompleteOrder.Click += OnCompleteOrderButtonClicked();
         }
 
-        void OnCancelButtonClicked(object sender, RoutedEventArgs e)
-        {
-
-        }
-
-        void OnCompleteOrderButtonClicked(object sender, RoutedEventArgs e)
-        {
-
-        }
-
-        void OnItemSelectionButtonClicked(object sender, RoutedEventArgs e)
+        public void OnCancelButtonClicked(object sender, RoutedEventArgs e)
         {
             throw new NotImplementedException();
         }
+
+        public void OnCompleteOrderButtonClicked(object sender, RoutedEventArgs e)
+        {
+            throw new NotImplementedException();
+        }
+
+        public void SwapScreen(UIElement element)
+        {
+            Container.Child = element;
+        }
+
     }
 }

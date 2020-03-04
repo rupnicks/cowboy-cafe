@@ -1,35 +1,31 @@
-﻿<Page x:Class="PointOfSale.OrderSummaryControl"
-      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
-      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
-      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
-      xmlns:local="clr-namespace:PointOfSale"
-      mc:Ignorable="d" 
-      d:DesignHeight="1080" d:DesignWidth="300"
-      Title="OrderSummaryControl">
-
+﻿<UserControl x:Class="PointOfSale.OrderSummaryControl"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:PointOfSale"
+             mc:Ignorable="d" 
+             d:DesignHeight="450" d:DesignWidth="800">
     <Grid Background="White">
-        <TextBox Name="OrderNumber" Grid.Row="0"></TextBox>
-        <ListBox ItemsSource="{Binding Path=Items}">
-            <ListBox.ItemTemplate>
-                <DataTemplate>
-                    <Grid>
-                        <Grid.RowDefinitions>
-                            <RowDefinition Height="72"/>
-                            <RowDefinition/>
-                            <RowDefinition Height="72"/>
-                        </Grid.RowDefinitions>
-                        <Grid.ColumnDefinitions>
-                            <ColumnDefinition Width="250"/>
-                            <ColumnDefinition Width="50"/>
-                        </Grid.ColumnDefinitions>
-                        <TextBlock Text="{Binding}"></TextBlock>
-                        <TextBlock Text="{Binding Path=Price}"/>
-                        <TextBox Grid.Row="2">Subtotal:</TextBox>
-                        <TextBox Text="{Binding Path=Subtotal, StringFormat=c}" Grid.Row="2" Grid.Column="1"/>
-                    </Grid>
-                </DataTemplate>
-            </ListBox.ItemTemplate>
-        </ListBox>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="72"/>
+            <RowDefinition/>
+            <RowDefinition Height="72"/>
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="2*"/>
+            <ColumnDefinition Width="1*"/>
+        </Grid.ColumnDefinitions>
+        
+        <StackPanel Name="OrderNumber" Grid.Row="0">
+            <Label FontSize="28">Order #</Label>
+            <TextBox Text="{Binding Path=Number}" Tag="orderNumber"/>
+        </StackPanel>
+        
+        
+        
+        <Label Grid.Row="2" FontSize="21">Subtotal:</Label>
+        <TextBox Text="{Binding Path=Subtotal, StringFormat=c}" Grid.Row="2" Grid.Column="1"/>
+        
     </Grid>
-</Page>
+</UserControl>
