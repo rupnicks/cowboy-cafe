@@ -36,8 +36,11 @@ namespace PointOfSale
                     switch(button.Tag)
                     {
                         case "CowpokeChili":
-                            order.Add(new CowpokeChili());
-                            orderControl.SwapScreen(new CustomizeCowpokeChili());
+                            var entree = new CowpokeChili();
+                            var screen = new CustomizeCowpokeChili();
+                            screen.DataContext = entree;
+                            order.Add(entree);
+                            orderControl.SwapScreen(screen);
                             break;
                         case "TrailBurger":
                             order.Add(new TrailBurger());
