@@ -9,32 +9,39 @@ using System.Text;
 
 namespace CowboyCafe.Data
 {
-    public class Order
+    public class Order: INotifyPropertyChanged
     {
         static uint lastOrderNumber = 0;
 
-        public IEnumerable<IOrderItem> Items => items;
+        private List<IOrderItem> items = new List<IOrderItem>();
 
-        private List<IOrderItem> items = new List<IOrderItem>(); 
+        public IEnumerable<IOrderItem> Items => items.ToArray();
 
         public double Subtotal { get; set; }
 
-        public uint OrderNumber { get { return lastOrderNumber + 1; } }
+        public uint OrderNumber { get { return lastOrderNumber; } }
 
         public event PropertyChangedEventHandler PropertyChanged;
 
+        public Order(uint orderNumber)
+        {
+            lastOrderNumber += 1;
+        }
+
         public void Add(IOrderItem item)
         {
-            Items.Add(item);
+            items.Add(item);
             Subtotal += item.Price;
             PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("Items"));
+            PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("Subtotal"));
         }
 
         public void Remove(IOrderItem item)
         {
-            Items.Remove(item);
+            items.Remove(item);
             Subtotal -= item.Price;
             PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("Items"));
+            PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("Subtotal"));
         }
     }
 }

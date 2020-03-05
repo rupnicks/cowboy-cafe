@@ -22,21 +22,21 @@ namespace PointOfSale
     {
         public OrderControl()
         {
+            Order order = new Order(1);
+            this.DataContext = order;
             InitializeComponent();
-            DataContext = new Order();
-
-            //CancelOrder.Click += OnCancelButtonClicked();
-            //CompleteOrder.Click += OnCompleteOrderButtonClicked();
         }
 
         public void OnCancelButtonClicked(object sender, RoutedEventArgs e)
         {
-            throw new NotImplementedException();
+            Order order = (Order)this.DataContext;
+            this.DataContext = new Order(order.OrderNumber + 1);
         }
 
         public void OnCompleteOrderButtonClicked(object sender, RoutedEventArgs e)
         {
-            throw new NotImplementedException();
+            Order order = (Order)this.DataContext;
+            this.DataContext = new Order(order.OrderNumber + 1);
         }
 
         public void SwapScreen(UIElement element)

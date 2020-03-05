@@ -19,31 +19,25 @@
         
         <StackPanel Name="OrderNumber" Grid.Row="0">
             <Label FontSize="28">Order #</Label>
-            <TextBox Text="{Binding Path=Number}" Tag="orderNumber"/>
+            <TextBlock Text="{Binding Path=OrderNumber}" Tag="orderNumber"/>
         </StackPanel>
 
-        <ListView ItemsSource="{Binding Path=Items}" Grid.Row="1">
-            <ListView.ItemTemplate>
+        <ListBox ItemsSource="{Binding Path=Items}" Grid.Row="1">
+            <ListBox.ItemTemplate>
                 <DataTemplate>
                     <Grid>
                         <Grid.RowDefinitions>
                             <RowDefinition/>
                             <RowDefinition/>
                         </Grid.RowDefinitions>
-                        <Grid.ColumnDefinitions>
-                            <ColumnDefinition/>
-                            <ColumnDefinition/>
-                        </Grid.ColumnDefinitions>
                         <TextBlock Text="{Binding}"/>
-                        <TextBlock Grid.Column="1" Text="{Binding Path=Price, StringFormat=c}"/>
-                        <ListView Grid.Row="1" Grid.ColumnSpan="2" ItemsSource="{Binding Path=SpecialInstructions}"/>
                     </Grid>
                 </DataTemplate>
-            </ListView.ItemTemplate>
-        </ListView>
+            </ListBox.ItemTemplate>
+        </ListBox>
         
         <Label Grid.Row="2" FontSize="21">Subtotal:</Label>
-        <TextBox Text="{Binding Path=Subtotal, StringFormat=c}" Grid.Row="2" Grid.Column="1"/>
+        <TextBlock Text="{Binding Path=Subtotal, StringFormat=c}" Grid.Row="2" Grid.Column="1"/>
         
     </Grid>
 </UserControl>

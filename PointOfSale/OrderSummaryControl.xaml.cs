@@ -23,10 +23,6 @@ namespace PointOfSale
         public OrderSummaryControl()
         {
             InitializeComponent();
-            Order order = new Order();
-            uint number = order.OrderNumber;
-
-            //orderNumber = $"Order {number}";
         }
     }
 }
