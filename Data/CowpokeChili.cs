@@ -7,6 +7,7 @@
 
 using System;
 using System.Collections.Generic;
+using System.ComponentModel;
 
 namespace CowboyCafe.Data
 {
@@ -22,7 +23,11 @@ namespace CowboyCafe.Data
         public bool Cheese
         {
             get { return cheese; }
-            set { cheese = value; }
+            set 
+            { 
+                cheese = value;
+                NotifyOfPropertyChange("Cheese");
+            }
         }
 
         private bool sourCream = true;
@@ -32,7 +37,11 @@ namespace CowboyCafe.Data
         public bool SourCream
         {
             get { return sourCream; }
-            set { sourCream = value; }
+            set 
+            { 
+                sourCream = value;
+                NotifyOfPropertyChange("SourCream");
+            }
         }
 
         private bool greenOnions = true;
@@ -42,17 +51,26 @@ namespace CowboyCafe.Data
         public bool GreenOnions
         {
             get { return greenOnions; }
-            set { greenOnions = value; }
+            set 
+            { 
+                greenOnions = value;
+                NotifyOfPropertyChange("GreenOnions");
+            }
         }
 
         private bool tortillaStrips = true;
+
         /// <summary>
         /// If the chili is topped with tortilla strips
         /// </summary>
         public bool TortillaStrips
         {
             get { return tortillaStrips; }
-            set { tortillaStrips = value; }
+            set 
+            { 
+                tortillaStrips = value;
+                NotifyOfPropertyChange("TortillaStrips");
+            }
         }
 
         /// <summary>
@@ -95,6 +113,10 @@ namespace CowboyCafe.Data
             }
         }
 
+        /// <summary>
+        /// Returns the string representation of the Cowpoke Chili
+        /// </summary>
+        /// <returns></returns>
         public override string ToString()
         {
             return "Cowpoke Chili";

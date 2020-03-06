@@ -31,12 +31,18 @@ namespace PointOfSale
         {
             Order order = (Order)this.DataContext;
             this.DataContext = new Order(order.OrderNumber + 1);
+            Container.Child = new MenuItemSelectionControl();
         }
 
         public void OnCompleteOrderButtonClicked(object sender, RoutedEventArgs e)
         {
             Order order = (Order)this.DataContext;
             this.DataContext = new Order(order.OrderNumber + 1);
+        }
+
+        public void OnItemSelectionButtonClicked(object sender, RoutedEventArgs e)
+        {
+            Container.Child = new MenuItemSelectionControl();
         }
 
         public void SwapScreen(UIElement element)

@@ -23,7 +23,7 @@
             <ColumnDefinition/>
             <ColumnDefinition/>
         </Grid.ColumnDefinitions>
-        <Button Name="ItemSelection" Grid.Row="0">Item Selection</Button>
+        <Button Name="ItemSelection" Click="OnItemSelectionButtonClicked" Grid.Row="0">Item Selection</Button>
         <Button Name="CancelOrder" Grid.Column="1" Click="OnCancelButtonClicked">Cancel Order</Button>
         <Button Name="CompleteOrder" Grid.Column="2" Click="OnCompleteOrderButtonClicked">Complete Order</Button>
         <Border x:Name="Container" Grid.Column="0" Grid.Row="1" Grid.ColumnSpan="3">

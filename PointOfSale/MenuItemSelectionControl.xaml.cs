@@ -26,6 +26,11 @@ namespace PointOfSale
             InitializeComponent();
         }
 
+        /// <summary>
+        /// Event handler for when an add button is clicked
+        /// </summary>
+        /// <param name="sender"> The button that was clicked </param>
+        /// <param name="e"> The event arguments </param>
         public void OnItemAddButtonClicked(object sender, RoutedEventArgs e)
         {
             var orderControl = this.FindAncestor<OrderControl>();
@@ -37,11 +42,9 @@ namespace PointOfSale
                     switch(button.Tag)
                     {
                         case "CowpokeChili":
-                            var entree = new CowpokeChili();
+                            var item = new CowpokeChili();
                             var screen = new CustomizeCowpokeChili();
-                            screen.DataContext = entree;
-                            order.Add(entree);
-                            orderControl.SwapScreen(screen);
+                            AddItemAndOpenCustomizationMenu(item, screen);
                             break;
                         case "TrailBurger":
                             order.Add(new TrailBurger());
@@ -88,6 +91,23 @@ namespace PointOfSale
                     }
                 }
             }
+        }
+
+        void AddItemAndOpenCustomizationMenu(IOrderItem item, FrameworkElement screen)
+        {
+            var order = DataContext as Order;
+            if (order == null) throw new Exception("DataContext expected to be an Order instance");
+
+            if(screen != null)
+            {
+                var orderControl = this.FindAncestor<OrderControl>();
+                if (orderControl == null) throw new Exception("An ancestor of OrderControl expected");
+
+                screen.DataContext = item;
+                orderControl.SwapScreen(screen);
+            }
+
+            order.Add(item);
         }
     }
 }

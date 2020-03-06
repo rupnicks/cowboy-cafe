@@ -6,4 +6,10 @@
     <RootNamespace>CowboyCafe.Data</RootNamespace>
   </PropertyGroup>
 
+  <ItemGroup>
+    <Folder Include="Entrees\" />
+    <Folder Include="Drinks\" />
+    <Folder Include="Sides\" />
+  </ItemGroup>
+
 </Project>
