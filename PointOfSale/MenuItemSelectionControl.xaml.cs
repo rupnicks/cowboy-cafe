@@ -40,29 +40,40 @@ namespace PointOfSale
                 if(sender is Button button)
                 {
                     switch(button.Tag)
-                    {
+                    {                        
                         case "CowpokeChili":
-                            var item = new CowpokeChili();
-                            var screen = new CustomizeCowpokeChili();
-                            AddItemAndOpenCustomizationMenu(item, screen);
+                            var chili = new CowpokeChili();
+                            var chiliScreen = new CustomizeCowpokeChili();
+                            AddItemAndOpenCustomizationMenu(chili, chiliScreen);
                             break;
                         case "TrailBurger":
-                            order.Add(new TrailBurger());
+                            var burger = new TrailBurger();
+                            var burgerScreen = new CustomizeTrailBurger();
+                            AddItemAndOpenCustomizationMenu(burger, burgerScreen);
                             break;
                         case "DakotaDouble":
-                            order.Add(new DakotaDoubleBurger());
+                            var doubleBurger = new DakotaDoubleBurger();
+                            var doubleScreen = new CustomizeDakotaDoubleBurger();
+                            AddItemAndOpenCustomizationMenu(doubleBurger, doubleScreen);
                             break;
                         case "TexasTriple":
-                            order.Add(new TexasTripleBurger());
+                            var triple = new TexasTripleBurger();
+                            var tripleScreen = new CustomizeTexasTripleBurger();
+                            AddItemAndOpenCustomizationMenu(triple, tripleScreen);
                             break;
                         case "AngryChicken":
-                            order.Add(new AngryChicken());
+                            var chicken = new AngryChicken();
+                            var chickenScreen = new CustomizeAngryChicken();
+                            AddItemAndOpenCustomizationMenu(chicken, chickenScreen);
                             break;
                         case "PecosPulledPork":
-                            order.Add(new PecosPulledPork());
+                            var pulled = new PecosPulledPork();
+                            var pulledScreen = new CustomizePecosPulledPork();
+                            AddItemAndOpenCustomizationMenu(pulled, pulledScreen);
                             break;
                         case "RustlersRibs":
-                            order.Add(new RustlersRibs());
+                            var ribs = new RustlersRibs();
+                            order.Add(ribs);
                             break;
                         case "BakedBeans":
                             order.Add(new BakedBeans());
