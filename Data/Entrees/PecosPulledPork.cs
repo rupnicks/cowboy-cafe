@@ -36,25 +36,33 @@ namespace CowboyCafe.Data
                 return 528;
             }
         }
-        
+
         private bool bread = true;
         /// <summary>
-        /// If the pulled pork should come with bread
+        /// If the sandwich comes on bread
         /// </summary>
         public bool Bread
         {
             get { return bread; }
-            set { bread = value; }
+            set
+            {
+                bread = value;
+                NotifyOfPropertyChange("Bread");
+            }
         }
-        
+
         private bool pickle = true;
         /// <summary>
-        /// If the pulled pork should come with pickles
+        /// If the sandwich comes with pickles
         /// </summary>
         public bool Pickle
         {
             get { return pickle; }
-            set { pickle = value; }
+            set
+            {
+                pickle = value;
+                NotifyOfPropertyChange("Pickle");
+            }
         }
 
         /// <summary>

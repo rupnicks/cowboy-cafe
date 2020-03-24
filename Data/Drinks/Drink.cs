@@ -29,6 +29,7 @@ namespace CowboyCafe.Data
                 PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("Size"));
                 PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("Price"));
                 PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("Calories"));
+                NotifyOfPropertyChange("Size");
             }
         }
 
@@ -63,5 +64,15 @@ namespace CowboyCafe.Data
         public abstract List<string> SpecialInstructions { get; }
 
         public event PropertyChangedEventHandler PropertyChanged;
+
+        /// <summary>
+        /// Notifies the order of any property changes
+        /// </summary>
+        /// <param name="property"> The property that has changed </param>
+        protected void NotifyOfPropertyChange(string property)
+        {
+            PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(property));
+            PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("SpecialInstructions"));
+        }
     }
 }

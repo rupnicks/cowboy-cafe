@@ -97,7 +97,9 @@ namespace PointOfSale
                             order.Add(new TexasTea());
                             break;
                         case "Water":
-                            order.Add(new Water());
+                            var water = new Water();
+                            var waterScreen = new CustomizeWater();
+                            AddItemAndOpenCustomizationMenu(water, waterScreen);
                             break;
                     }
                 }
