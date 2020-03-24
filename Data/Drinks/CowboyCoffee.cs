@@ -6,7 +6,6 @@
 
 using System;
 using System.Collections.Generic;
-using System.Text;
 
 namespace CowboyCafe.Data
 {
@@ -15,20 +14,46 @@ namespace CowboyCafe.Data
     /// </summary>
     public class CowboyCoffee : Drink
     {
+        private bool decaf = false;
         /// <summary>
         /// Whether or not the coffee should be decaf
         /// </summary>
-        public bool Decaf { get; set; }
-
+        public bool Decaf
+        {
+            get { return decaf; }
+            set
+            {
+                decaf = value;
+                NotifyOfPropertyChange("Decaf");
+            }
+        }
+        private bool iced = false;
         /// <summary>
         /// Whether or not the coffee should come with ice
         /// </summary>
-        public new bool Ice { get; set; } = false;
+        public bool Iced
+        {
+            get { return iced; }
+            set
+            {
+                iced = value;
+                NotifyOfPropertyChange("Iced");
+            }
+        }
 
+        private bool roomForCream = false;
         /// <summary>
         /// Whether or not the coffee should leave room for cream
         /// </summary>
-        public bool RoomForCream { get; set; } = false;
+        public bool RoomForCream
+        {
+            get { return roomForCream; }
+            set
+            {
+                roomForCream = value;
+                NotifyOfPropertyChange("RoomForCream");
+            }
+        }
 
         /// <summary>
         /// Returns the price of the coffee based on the size
@@ -81,7 +106,7 @@ namespace CowboyCafe.Data
             {
                 var instructions = new List<string>();
 
-                if (Ice) { instructions.Add("Add Ice"); }
+                if (Iced) { instructions.Add("Add Ice"); }
                 if (RoomForCream) { instructions.Add("Room for Cream"); }
 
                 return instructions;

@@ -15,15 +15,33 @@ namespace CowboyCafe.Data
     /// </summary>
     public class TexasTea : Drink
     {
+        private bool sweet = true;
         /// <summary>
         /// Whether or not the tea should be sweet
         /// </summary>
-        public bool Sweet { get; set; } = true;
+        public bool Sweet
+        {
+            get { return sweet; }
+            set
+            {
+                sweet = value;
+                NotifyOfPropertyChange("Sweet");
+            }
+        }
 
+        private bool lemon;
         /// <summary>
         /// Whether or not the tea should be served with Lemon
         /// </summary>
-        public bool Lemon { get; set; } = false;
+        public bool Lemon
+        {
+            get { return lemon; }
+            set
+            {
+                lemon = value;
+                NotifyOfPropertyChange("Lemon");
+            }
+        }
 
         /// <summary>
         /// Returns the price of the tea based on the size

@@ -88,13 +88,17 @@ namespace PointOfSale
                             order.Add(new PanDeCampo());
                             break;
                         case "CowboyCoffee":
-                            order.Add(new CowboyCoffee());
+                            var coffee = new CowboyCoffee();
+                            var coffeeScreen = new CustomizeCowboyCoffee();
+                            AddItemAndOpenCustomizationMenu(coffee, coffeeScreen);
                             break;
                         case "JerkedSoda":
                             order.Add(new JerkedSoda());
                             break;
                         case "TexasTea":
-                            order.Add(new TexasTea());
+                            var tea = new TexasTea();
+                            var teaScreen = new CustomizeTexasTea();
+                            AddItemAndOpenCustomizationMenu(tea, teaScreen);
                             break;
                         case "Water":
                             var water = new Water();
