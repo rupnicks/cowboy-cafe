@@ -179,6 +179,10 @@ namespace CowboyCafe.Data
             }
         }
 
+        /// <summary>
+        /// Overrides the default ToString method
+        /// </summary>
+        /// <returns> The item details </returns>
         public override string ToString()
         {
             return "Dakota Double Burger";

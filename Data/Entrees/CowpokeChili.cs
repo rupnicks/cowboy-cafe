@@ -120,7 +120,7 @@ namespace CowboyCafe.Data
         /// <summary>
         /// Returns the string representation of the Cowpoke Chili
         /// </summary>
-        /// <returns></returns>
+        /// <returns> The string representation of the Cowpoke chili</returns>
         public override string ToString()
         {
             return "Cowpoke Chili";

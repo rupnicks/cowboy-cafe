@@ -57,6 +57,9 @@ namespace CowboyCafe.Data
             }
         }
 
+        /// <summary>
+        /// The special instructions for preparing the item
+        /// </summary>
         public override List<string> SpecialInstructions
         {
             get
@@ -66,6 +69,10 @@ namespace CowboyCafe.Data
             }
         }
 
+        /// <summary>
+        /// Overrides the default ToString method
+        /// </summary>
+        /// <returns> The item details </returns>
         public override string ToString()
         {
             return Size + " Corn Dodgers";
