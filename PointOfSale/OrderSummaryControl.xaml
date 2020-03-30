@@ -66,7 +66,7 @@
             <TextBlock Text="{Binding OrderNumber}" Tag="orderNumber" FontSize="21" Height="20"/>
         </StackPanel>
 
-        <ListBox ItemsSource="{Binding Path=Items}" Grid.Row="1" SelectionChanged="ItemSelected" SelectionMode="Single">
+        <ListBox ItemsSource="{Binding Path=Items}" Grid.Row="1" SelectionChanged="ItemSelected" SelectionMode="Single" Name="ItemsList">
             <ListBox.ItemTemplate>
                 <DataTemplate>
                     <Grid>

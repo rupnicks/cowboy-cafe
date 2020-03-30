@@ -1,4 +1,10 @@
-﻿using System;
+﻿/*
+ * Author: Samantha Rupnick
+ * Class: CustomizePecosPulledPork.xaml.cs
+ * Purpose: Holds interaction logic for the xaml class
+ */
+
+using System;
 using System.Collections.Generic;
 using System.Text;
 using System.Windows;
@@ -10,6 +16,7 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using CowboyCafe.Data;
 
 namespace PointOfSale
 {
@@ -18,8 +25,10 @@ namespace PointOfSale
     /// </summary>
     public partial class CustomizePecosPulledPork : UserControl
     {
-        public CustomizePecosPulledPork()
+        public Object Object;
+        public CustomizePecosPulledPork(object dc)
         {
+            Object = (Object)dc;
             InitializeComponent();
         }
     }

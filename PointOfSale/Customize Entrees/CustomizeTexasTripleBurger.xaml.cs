@@ -1,4 +1,10 @@
-﻿using System;
+﻿/*
+ * Author: Samantha Rupnick
+ * Class: CustomizeTexasTripleBurger.xaml.cs
+ * Purpose: Holds interaction logic for the xaml class
+ */
+
+using System;
 using System.Collections.Generic;
 using System.Text;
 using System.Windows;
@@ -18,8 +24,10 @@ namespace PointOfSale
     /// </summary>
     public partial class CustomizeTexasTripleBurger : UserControl
     {
-        public CustomizeTexasTripleBurger()
+        public Object Object;
+        public CustomizeTexasTripleBurger(object dc)
         {
+            Object = (Object)dc;
             InitializeComponent();
         }
     }

@@ -50,7 +50,7 @@ namespace PointOfSale
                     {                        
                         case "CowpokeChili":
                             var chili = new CowpokeChili();
-                            var chiliScreen = new CustomizeCowpokeChili();
+                            var chiliScreen = new CustomizeCowpokeChili(DataContext);
                             AddItemAndOpenCustomizationMenu(chili, chiliScreen);
                             break;
                         case "TrailBurger":
@@ -60,22 +60,22 @@ namespace PointOfSale
                             break;
                         case "DakotaDouble":
                             var doubleBurger = new DakotaDoubleBurger();
-                            var doubleScreen = new CustomizeDakotaDoubleBurger();
+                            var doubleScreen = new CustomizeDakotaDoubleBurger(DataContext);
                             AddItemAndOpenCustomizationMenu(doubleBurger, doubleScreen);
                             break;
                         case "TexasTriple":
                             var triple = new TexasTripleBurger();
-                            var tripleScreen = new CustomizeTexasTripleBurger();
+                            var tripleScreen = new CustomizeTexasTripleBurger(DataContext);
                             AddItemAndOpenCustomizationMenu(triple, tripleScreen);
                             break;
                         case "AngryChicken":
                             var chicken = new AngryChicken();
-                            var chickenScreen = new CustomizeAngryChicken();
+                            var chickenScreen = new CustomizeAngryChicken(DataContext);
                             AddItemAndOpenCustomizationMenu(chicken, chickenScreen);
                             break;
                         case "PecosPulledPork":
                             var pulled = new PecosPulledPork();
-                            var pulledScreen = new CustomizePecosPulledPork();
+                            var pulledScreen = new CustomizePecosPulledPork(DataContext);
                             AddItemAndOpenCustomizationMenu(pulled, pulledScreen);
                             break;
                         case "RustlersRibs":

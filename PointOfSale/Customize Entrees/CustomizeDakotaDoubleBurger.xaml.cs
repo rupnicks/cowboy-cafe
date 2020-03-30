@@ -1,4 +1,9 @@
-﻿using System;
+﻿/*Author: Samantha Rupnick
+ * Class: CustomizeDakotaDoubleBurger.xaml.cs
+ * Purpose: Holds interaction logic for the xaml class
+ */
+
+using System;
 using System.Collections.Generic;
 using System.Text;
 using System.Windows;
@@ -10,6 +15,7 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using CowboyCafe.Data;
 
 namespace PointOfSale
 {
@@ -18,8 +24,10 @@ namespace PointOfSale
     /// </summary>
     public partial class CustomizeDakotaDoubleBurger : UserControl
     {
-        public CustomizeDakotaDoubleBurger()
+        public Order Order;
+        public CustomizeDakotaDoubleBurger(object dc)
         {
+            Order = (Order)dc;
             InitializeComponent();
         }
     }

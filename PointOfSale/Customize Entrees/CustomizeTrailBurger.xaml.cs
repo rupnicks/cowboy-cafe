@@ -1,4 +1,10 @@
-﻿using CowboyCafe.Data;
+﻿/*
+ * Author: Samantha Rupnick
+ * Class: CustomizeTrailBurger.xaml.cs
+ * Purpose: Holds interaction logic for the xaml class
+ */
+
+using CowboyCafe.Data;
 using System;
 using System.Collections.Generic;
 using System.Text;

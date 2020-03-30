@@ -70,7 +70,7 @@
         
         <StackPanel HorizontalAlignment="Center" Width="600">
             <TextBlock FontSize="30" Text="Customize Cowboy Coffee" />
-            <CheckBox IsChecked="{Binding Path=Iced}"> Ice
+            <CheckBox IsChecked="{Binding Path=Ice}"> Ice
                 <CheckBox.LayoutTransform>
                     <ScaleTransform ScaleX="2" ScaleY="2" />
                 </CheckBox.LayoutTransform>
