@@ -10,4 +10,11 @@
     <ProjectReference Include="..\Data\Data.csproj" />
   </ItemGroup>
 
+  <ItemGroup>
+    <Compile Update="CustomizeChiliCheeseFries - Copy.xaml.cs">
+      <SubType>Code</SubType>
+      <DependentUpon>CustomizeChiliCheeseFries - Copy.xaml</DependentUpon>
+    </Compile>
+  </ItemGroup>
+
 </Project>

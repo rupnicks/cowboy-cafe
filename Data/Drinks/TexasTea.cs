@@ -43,6 +43,20 @@ namespace CowboyCafe.Data
             }
         }
 
+        private bool ice = true;
+        /// <summary>
+        /// Whether or not the tea should be served with ice
+        /// </summary>
+        public override bool Ice
+        {
+            get { return ice; }
+            set
+            {
+                ice = value;
+                NotifyOfPropertyChange("Ice");
+            }
+        }
+
         /// <summary>
         /// Returns the price of the tea based on the size
         /// </summary>

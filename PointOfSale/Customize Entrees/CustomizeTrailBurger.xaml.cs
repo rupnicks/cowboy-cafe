@@ -1,4 +1,5 @@
-﻿using System;
+﻿using CowboyCafe.Data;
+using System;
 using System.Collections.Generic;
 using System.Text;
 using System.Windows;
@@ -14,12 +15,14 @@ using System.Windows.Shapes;
 namespace PointOfSale
 {
     /// <summary>
-    /// Interaction logic for CustomizeTexasTea.xaml
+    /// Interaction logic for CustomizeTrailBurger.xaml
     /// </summary>
-    public partial class CustomizeTexasTea : UserControl
+    public partial class CustomizeTrailBurger : UserControl
     {
-        public CustomizeTexasTea()
+        public Order Order;
+        public CustomizeTrailBurger(object dc)
         {
+            Order = (Order)dc;
             InitializeComponent();
         }
     }

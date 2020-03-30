@@ -27,17 +27,18 @@ namespace CowboyCafe.Data
                 NotifyOfPropertyChange("Decaf");
             }
         }
-        private bool iced = false;
+
+        private bool ice = false;
         /// <summary>
-        /// Whether or not the coffee should come with ice
+        /// Whether or not the coffee should be served with ice
         /// </summary>
-        public bool Iced
+        public override bool Ice
         {
-            get { return iced; }
+            get { return ice; }
             set
             {
-                iced = value;
-                NotifyOfPropertyChange("Iced");
+                ice = value;
+                NotifyOfPropertyChange("Ice");
             }
         }
 
@@ -106,7 +107,7 @@ namespace CowboyCafe.Data
             {
                 var instructions = new List<string>();
 
-                if (Iced) { instructions.Add("Add Ice"); }
+                if (Ice) { instructions.Add("Add Ice"); }
                 if (RoomForCream) { instructions.Add("Room for Cream"); }
 
                 return instructions;

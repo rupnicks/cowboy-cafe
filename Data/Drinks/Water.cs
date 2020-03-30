@@ -29,6 +29,20 @@ namespace CowboyCafe.Data
             }
         }
 
+        private bool ice = true;
+        /// <summary>
+        /// Whether or not the water should be served with ice
+        /// </summary>
+        public override bool Ice
+        {
+            get { return ice; }
+            set
+            {
+                ice = value;
+                NotifyOfPropertyChange("Ice");
+            }
+        }
+
         /// <summary>
         /// Returns the price of the water
         /// </summary>

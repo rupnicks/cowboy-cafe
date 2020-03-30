@@ -15,6 +15,20 @@ namespace CowboyCafe.Data
     /// </summary>
     public class JerkedSoda : Drink
     {
+        private bool ice = true;
+        /// <summary>
+        /// Whether or not the soda should be served with ice
+        /// </summary>
+        public override bool Ice
+        {
+            get { return ice; }
+            set
+            {
+                ice = value;
+                NotifyOfPropertyChange("Ice");
+            }
+        }
+
         /// <summary>
         /// What flavor the soda should be
         /// </summary>
@@ -77,6 +91,10 @@ namespace CowboyCafe.Data
             }
         }
 
+        /// <summary>
+        /// Overrides the default ToString method for the class
+        /// </summary>
+        /// <returns> The information of the drink to be printed </returns>
         public override string ToString()
         {
             switch(Flavor)

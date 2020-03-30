@@ -43,20 +43,7 @@ namespace CowboyCafe.Data
         /// </summary>
         public abstract uint Calories { get; }
 
-        private bool ice = true;
-
-        /// <summary>
-        /// Gets whether or not the drink has ice, defaulted to true
-        /// </summary>
-        public bool Ice
-        {
-            get { return ice; }
-            set
-            {
-                ice = value;
-                PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("Ice"));
-            }
-        }
+        public abstract bool Ice { get; set; }
 
         /// <summary>
         /// Lists special instructions for how the drink should be prepared

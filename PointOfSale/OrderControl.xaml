@@ -6,10 +6,29 @@
              xmlns:local="clr-namespace:PointOfSale"
              mc:Ignorable="d" 
              d:DesignHeight="1080" d:DesignWidth="1500">
+
+    <!--Styling section of the class-->
     <UserControl.Resources>
+        <!--Styling for buttons-->
         <Style TargetType="Button">
             <Setter Property="Height" Value="50px"/>
             <Setter Property="FontSize" Value="18"/>
+
+            <!--Font-->
+            <Setter Property="FontFamily" Value="Comic Sans MS"/>
+        </Style>
+
+        <!--Styling for Textblocks-->
+        <Style TargetType="TextBlock">
+            <Setter Property="Height" Value="110"/>
+
+            <!--Font-->
+            <Setter Property="FontFamily" Value="Comic Sans MS"/>
+            <Setter Property="FontSize" Value="30"/>
+
+            <!--Alignment-->
+            <Setter Property="HorizontalAlignment" Value="Center"/>
+            <Setter Property="VerticalAlignment" Value="Center"/>
         </Style>
     </UserControl.Resources>
     <Grid Background="White">
