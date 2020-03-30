@@ -31,7 +31,8 @@ namespace PointOfSale
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
-        void ItemSelected(object sender, SelectionChangedEventArgs e)
+        private 
+            void ItemSelected(object sender, SelectionChangedEventArgs e)
         {
             IOrderItem item = ItemsList.SelectedItem as IOrderItem;
             FrameworkElement screen = null;
