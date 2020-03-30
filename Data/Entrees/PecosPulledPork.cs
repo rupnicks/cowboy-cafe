@@ -48,6 +48,7 @@ namespace CowboyCafe.Data
             {
                 bread = value;
                 NotifyOfPropertyChange("Bread");
+                NotifyOfPropertyChange("SpecialInstructions");
             }
         }
 
@@ -62,6 +63,7 @@ namespace CowboyCafe.Data
             {
                 pickle = value;
                 NotifyOfPropertyChange("Pickle");
+                NotifyOfPropertyChange("SpecialInstructions");
             }
         }
 

@@ -38,7 +38,7 @@ namespace CowboyCafe.DataTests.UnitTests
         [Fact]
         public void AddedIOrderItemsAppearInItemsProperty()
         {
-            var order = new Order();
+            var order = new Order(1);
             var item = new MockOrderItem();
             order.Add(item);
             Assert.Contains(item, order.Items);
@@ -50,7 +50,7 @@ namespace CowboyCafe.DataTests.UnitTests
         [Fact]
         public void RemovedIOrderItemsNoLongerAppearInItemsProperty()
         {
-            var order = new Order();
+            var order = new Order(1);
             var item = new MockOrderItem();
             order.Add(item);
             order.Remove(item);
@@ -69,7 +69,7 @@ namespace CowboyCafe.DataTests.UnitTests
         [InlineData(new double[] { -100, -5 })]
         public void SubtotalShouldBeSumOfOrderItemPrices(double[] prices)
         {
-            var order = new Order();
+            var order = new Order(1);
             double total = 0;
             foreach(var price in prices)
             {
@@ -92,7 +92,7 @@ namespace CowboyCafe.DataTests.UnitTests
                 new MockOrderItem() { Price = 7 }
             };
 
-            var order = new Order();
+            var order = new Order(1);
             foreach(var item in items)
             {
                 order.Add(item);

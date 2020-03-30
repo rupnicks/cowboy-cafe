@@ -48,6 +48,7 @@ namespace CowboyCafe.Data
             {
                 ketchup = value;
                 NotifyOfPropertyChange("Ketchup");
+                NotifyOfPropertyChange("SpecialInstructions");
             }
         }
 
@@ -62,6 +63,7 @@ namespace CowboyCafe.Data
             {
                 mustard = value;
                 NotifyOfPropertyChange("Mustard");
+                NotifyOfPropertyChange("SpecialInstructions");
             }
         }
 
@@ -76,6 +78,7 @@ namespace CowboyCafe.Data
             {
                 pickle = value;
                 NotifyOfPropertyChange("Pickle");
+                NotifyOfPropertyChange("SpecialInstructions");
             }
         }
 
@@ -90,6 +93,7 @@ namespace CowboyCafe.Data
             {
                 cheese = value;
                 NotifyOfPropertyChange("Cheese");
+                NotifyOfPropertyChange("SpecialInstructions");
             }
         }
 
@@ -104,6 +108,7 @@ namespace CowboyCafe.Data
             {
                 bun = value;
                 NotifyOfPropertyChange("Bun");
+                NotifyOfPropertyChange("SpecialInstructions");
             }
         }
 
