@@ -144,5 +144,18 @@ namespace CowboyCafe.Data
             string priceOfItemAsCurrency = String.Format("{0:C}", i.Price);
             itemPrices.Add(priceOfItemAsCurrency);
         }
+
+        private double total;
+        /// <summary>
+        /// The total price of the order
+        /// </summary>
+        public double Total
+        {
+            get { return total; }
+            set
+            {
+                total = Subtotal + (Subtotal * .16);
+            }
+        }
     }
 }

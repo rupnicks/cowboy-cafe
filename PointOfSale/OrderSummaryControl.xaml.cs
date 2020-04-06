@@ -249,7 +249,7 @@ namespace PointOfSale
                     screen.DataContext = item;
                     orderControl30.SwapScreen(screen);
                     break;
-                case "Peco's Pulled Pork":
+                case "Pecos Pulled Pork":
                     var orderControl31 = this.FindAncestor<OrderControl>();
                     if (orderControl31 == null) throw new Exception("An ancestor of OrderControl expected");
                     screen = new CustomizePecosPulledPork(this.DataContext);
@@ -262,7 +262,7 @@ namespace PointOfSale
                     screen = new CustomizeTexasTripleBurger(this.DataContext);
                     screen.DataContext = item;
                     orderControl32.SwapScreen(screen); break;
-                case "Trailburger":
+                case "Trail Burger":
                     var orderControl33 = this.FindAncestor<OrderControl>();
                     if (orderControl33 == null) throw new Exception("An ancestor of OrderControl expected");
                     screen = new CustomizeTrailBurger(this.DataContext);
@@ -331,26 +331,28 @@ namespace PointOfSale
                     screen.DataContext = item;
                     orderControl42.SwapScreen(screen);
                     break;
-                case "Small Pan De Campo":
+                case "Small Pan de Campo":
                     var orderControl43 = this.FindAncestor<OrderControl>();
                     if (orderControl43 == null) throw new Exception("An ancestor of OrderControl expected");
                     screen = new CustomizePanDeCampo(this.DataContext);
                     screen.DataContext = item;
                     orderControl43.SwapScreen(screen);
                     break;
-                case "Medium Pan De Campo":
+                case "Medium Pan de Campo":
                     var orderControl44 = this.FindAncestor<OrderControl>();
                     if (orderControl44 == null) throw new Exception("An ancestor of OrderControl expected");
                     screen = new CustomizePanDeCampo(this.DataContext);
                     screen.DataContext = item;
                     orderControl44.SwapScreen(screen);
                     break;
-                case "Large Pan De Campo":
+                case "Large Pan de Campo":
                     var orderControl45 = this.FindAncestor<OrderControl>();
                     if (orderControl45 == null) throw new Exception("An ancestor of OrderControl expected");
                     screen = new CustomizePanDeCampo(this.DataContext);
                     screen.DataContext = item;
                     orderControl45.SwapScreen(screen);
+                    break;
+                case "Rustler's Ribs":
                     break;
                 default:
                     throw new NotImplementedException("Unknown Item Selected");

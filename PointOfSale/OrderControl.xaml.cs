@@ -36,8 +36,7 @@ namespace PointOfSale
 
         public void OnCompleteOrderButtonClicked(object sender, RoutedEventArgs e)
         {
-            Order order = (Order)this.DataContext;
-            this.DataContext = new Order(order.OrderNumber + 1);
+            Container.Child = new TransactionControl();
         }
 
         public void OnItemSelectionButtonClicked(object sender, RoutedEventArgs e)
