@@ -76,7 +76,7 @@ namespace PointOfSale
             var orderControl = this.FindAncestor<OrderControl>();
             if (orderControl == null) throw new Exception("An ancestor of OrderControl expected");
             orderControl.SwapScreen(new CashPaymentScreen(drawer, order));
-            PrintReceipt();
+            //PrintReceipt();
         }
 
         /// <summary>
