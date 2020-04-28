@@ -1,0 +1,67 @@
+﻿@page
+@model IndexModel
+@using CowboyCafe.Data
+@{
+    ViewData["Title"] = "Home page";
+}
+
+<div class="text-center">
+    <h1 class="display-4">Welcome</h1>
+    <h1> Cowboy Cafe</h1>
+    <p>
+        We at Cowboy Cafe are proud to bring you authentic trail
+        meals from the American West. Shake off the dust on your boots
+        and sake your thirst with one of our old-fashioned hand-jerked
+        sodas. Dip your Pan de Campo into a bowl of beans. Or conquer
+        the the mighty Texas Triple Burger! You’ve had a hard ride -
+        so take it easy with us.
+    </p>
+</div>
+
+<h2>Entrees</h2>
+<div>
+    <ul class="menu-item">
+        @foreach (Entree entree in @CowboyCafe.Data.Menu.Entrees())
+        {
+            <li>
+                <div class="details">
+                    <h3 class="name">@entree</h3>
+                    <h3 class="price">@entree.Price</h3>
+                    <h3 class="calories">@entree.Calories</h3>
+                </div>
+            </li>
+        }
+    </ul>
+</div>
+
+<h2>Sides</h2>
+<div>
+    <ul class="menu-item">
+        @foreach (Side side in @CowboyCafe.Data.Menu.Sides())
+        {
+            <li>
+                <div class="details">
+                    <h3 class="name">@side</h3>
+                    <h3 class="price">@side.Price</h3>
+                    <h3 class="calories">@side.Calories</h3>
+                </div>
+            </li>
+        }
+    </ul>
+</div>
+
+<h2>Drinks</h2>
+<div>
+    <ul class="menu-item">
+        @foreach (Drink drink in @CowboyCafe.Data.Menu.Drinks())
+        {
+            <li>
+                <div class="details">
+                    <h3 class="name">@drink</h3>
+                    <h3 class="price">@drink.Price</h3>
+                    <h3 class="calories">@drink.Calories</h3>
+                </div>
+            </li>
+        }
+    </ul>
+</div>
