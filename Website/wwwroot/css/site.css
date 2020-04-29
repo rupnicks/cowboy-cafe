@@ -69,3 +69,83 @@ body {
   white-space: nowrap;
   line-height: 60px; /* Vertically center the text there */
 }
+
+/* Making it pretty */
+form#menu-form {
+    display: grid;
+    grid-template-columns: 1fr 3fr;
+    grid-template-rows: auto auto;
+}
+
+ul.menu-item {
+    padding: 0;
+    margin: 0;
+    border-top: 1px solid grey;
+    grid-column-start: 3;
+}
+
+ul.menu-item h3 {
+    font-size: 1.2rem;
+    margin-bottom: 0;
+    color: darkslategray;
+}
+
+ul.menu-item > li {
+    display: flex;
+    flex-direction: row;
+    align-items: flex-start;
+    justify-content: space-between;
+    min-height: 50px;
+}
+
+.name {
+    color: darkslategray;
+    font-size: 1.2rem;
+    margin: 0;
+}
+
+.details {
+    display: flex;
+    flex-direction: row;
+}
+
+.price, .calories {
+    color: gray;
+    border: 1px solid gray;
+    width: 60px;
+    text-align: center;
+    font-size: 1.2rem;
+}
+
+.price::before {
+    content: "Price";
+    display: block;
+    font-size: 1rem;
+}
+
+.calories::before {
+    content: "Calories";
+    display: block;
+    font-size: 1rem;
+}
+
+/* Search Function Styles*/
+
+#search {
+    grid-column-start: 1;
+    grid-column-end: 3;
+    text-align: center;
+}
+
+#filters {
+    display: flex;
+    flex-direction: column;
+}
+
+#filters input[type=number] {
+   width: 3rem;
+}
+
+#filters h4 {
+    margin-bottom: 0.2rem;
+ }

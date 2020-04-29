@@ -22,5 +22,10 @@ namespace CowboyCafe.Data
         /// The special instructions for this IOrderItem
         /// </summary>
         List<string> SpecialInstructions { get; }
+
+        /// <summary>
+        /// The calories for this IOrderItem
+        /// </summary>
+        uint Calories { get; }
     }
 }

@@ -18,50 +18,95 @@
     </p>
 </div>
 
-<h2>Entrees</h2>
-<div>
-    <ul class="menu-item">
-        @foreach (Entree entree in @CowboyCafe.Data.Menu.Entrees())
-        {
-            <li>
-                <div class="details">
-                    <h3 class="name">@entree</h3>
-                    <h3 class="price">@entree.Price</h3>
-                    <h3 class="calories">@entree.Calories</h3>
-                </div>
-            </li>
-        }
-    </ul>
-</div>
+<form id="menu-form">
 
-<h2>Sides</h2>
-<div>
-    <ul class="menu-item">
-        @foreach (Side side in @CowboyCafe.Data.Menu.Sides())
-        {
-            <li>
-                <div class="details">
-                    <h3 class="name">@side</h3>
-                    <h3 class="price">@side.Price</h3>
-                    <h3 class="calories">@side.Calories</h3>
-                </div>
-            </li>
-        }
-    </ul>
-</div>
+    <div id="search">
+        <input type="text" name="SearchTerms" value="@Model.SearchTerms" />
+        <input type="submit" value="Search" />
+    </div>
 
-<h2>Drinks</h2>
-<div>
-    <ul class="menu-item">
-        @foreach (Drink drink in @CowboyCafe.Data.Menu.Drinks())
+    <div id="filters">
+        <h4>Type</h4>
+        @foreach (String item in Menu.ItemTypes)
         {
-            <li>
-                <div class="details">
-                    <h3 class="name">@drink</h3>
-                    <h3 class="price">@drink.Price</h3>
-                    <h3 class="calories">@drink.Calories</h3>
-                </div>
-            </li>
+            <label>
+                <input type="checkbox" name="Types" value="@item" checked="@Model.Types.Contains(item)" /> @item
+            </label>
         }
-    </ul>
-</div>
+
+        <h4>Calories</h4>
+        <div>
+            Between
+            <input name="CalMin" type="number" min="0" max="1000" step="1" placeholder="min" value="@Model.CalMin"/>
+            and
+            <input name="CalMax" type="number" min="0" max="1000" step="1" placeholder="max" value="@Model.CalMax"/>
+        </div>
+
+        <h4>Price</h4>
+        <div>
+            Between
+            <input name="PriceMin" type="number" min="0" max="100" step=".01" placeholder="min" value="@Model.PriceMin"/>
+            and
+            <input name="PriceMax" type="number" min="0" max="100" step=".01" placeholder="max" value="@Model.PriceMax"/>
+        </div>
+    </div>
+
+    <div id="menu">
+        <h2>Entrees</h2>
+        <div class="menu-item">
+            <ul>
+                @foreach (IOrderItem item in @Model.Menus)
+                {
+                    @if (@item is Entree)
+                    {
+                        <li>
+                            <h3 class="name">@item</h3>
+                            <div class="details">
+                                <h3 class="price">@String.Format("{0:c}", item.Price)</h3>
+                                <h3 class="calories">@item.Calories</h3>
+                            </div>
+                        </li>
+                    }
+                }
+            </ul>
+        </div>
+
+        <h2>Sides</h2>
+        <div class="menu-item">
+            <ul>
+                @foreach (IOrderItem item in @Model.Menus)
+                {
+                    @if (@item is Side)
+                    {
+                        <li>
+                            <h3 class="name">@item</h3>
+                            <div class="details">
+                                <h3 class="price">@String.Format("{0:c}", item.Price)</h3>
+                                <h3 class="calories">@item.Calories</h3>
+                            </div>
+                        </li>
+                    }
+                }
+            </ul>
+        </div>
+
+        <h2>Drinks</h2>
+        <div class="menu-item">
+            <ul>
+                @foreach (IOrderItem item in @Model.Menus)
+                {
+                    @if (@item is Drink)
+                    {
+                        <li>
+                            <h3 class="name">@item</h3>
+                            <div class="details">
+                                <h3 class="price">@String.Format("{0:c}", item.Price)</h3>
+                                <h3 class="calories">@item.Calories</h3>
+                            </div>
+                        </li>
+                    }
+                }
+            </ul>
+        </div>
+    </div>
+</form>
