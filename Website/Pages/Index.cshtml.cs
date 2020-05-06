@@ -1,4 +1,9 @@
-﻿using System;
+﻿/* Index.cshtml.cs
+ * Author: Samantha Rupnick
+ * Purpose: Contains the code for filtering the menu using Linq
+ */
+
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
@@ -54,10 +59,50 @@ namespace Website.Pages
             this.CalMax = CalMax;
             this.PriceMin = PriceMin;
             this.PriceMax = PriceMax;
-            Menus = Menu.Search(SearchTerms);
-            Menus = Menu.FilterByItemType(Menus, Types);
-            Menus = Menu.FilterByCalories(Menus, CalMin, CalMax);
-            Menus = Menu.FilterByPrice(Menus, PriceMin, PriceMax);
+            Menus = Menu.All();
+            //Filter by Search Terms
+            if (SearchTerms != null)
+            {
+                Menus = Menus.Where(item => item.ToString().Contains(SearchTerms, StringComparison.InvariantCultureIgnoreCase));
+            }
+            //Filter by Item Type
+            if(Types != null)
+            {
+                if(Types.Contains("Entree"))
+                {
+                    Menus = Menus.Where(item => item is Entree);
+                }
+                if(Types.Contains("Drink"))
+                {
+                    Menus = Menus.Where(item => item is Drink);
+                }
+                if(Types.Contains("Side"))
+                {
+                    Menus = Menus.Where(item => item is Side);
+                }    
+            }
+            //Filter by Calories
+            if(CalMin != null)
+            {
+                Menus = Menus.Where(item =>
+                item.Calories >= CalMin);
+            }
+            if(CalMax != null)
+            {
+                Menus = Menus.Where(item =>
+                item.Calories <= CalMax);
+            }
+            //Filter by Price
+            if(PriceMin != null)
+            {
+                Menus = Menus.Where(item =>
+                item.Price >= PriceMin);
+            }
+            if(PriceMax != null)
+            {
+                Menus = Menus.Where(item =>
+                item.Price <= PriceMax);
+            }
         }
     }
 }

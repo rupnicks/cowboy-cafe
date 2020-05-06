@@ -1,4 +1,9 @@
-﻿/* Please see documentation at https://docs.microsoft.com/aspnet/core/client-side/bundling-and-minification
+﻿/* site.css
+    Author: Samantha Rupnick
+    Purpose: The site design elements
+*/
+
+/* Please see documentation at https://docs.microsoft.com/aspnet/core/client-side/bundling-and-minification
 for details on configuring this project to bundle and minify static web assets. */
 
 a.navbar-brand {
@@ -71,13 +76,28 @@ body {
 }
 
 /* Making it pretty */
+
 form#menu-form {
     display: grid;
     grid-template-columns: 1fr 3fr;
     grid-template-rows: auto auto;
 }
 
-ul.menu-item {
+/* creates columns using flex box instead of floats */
+
+.flex-columns {
+    /* these don't work for some reason and it's frustrating me */
+    display: flex;
+    flex-direction: row;
+}
+
+@media (max-width: 490px) {
+    .flex-columns {
+        flex-direction: column;
+    }
+}
+
+.menu-item {
     padding: 0;
     margin: 0;
     border-top: 1px solid grey;
@@ -109,10 +129,10 @@ ul.menu-item > li {
     flex-direction: row;
 }
 
-.price, .calories {
+.price, .calories, .soda-flavors {
     color: gray;
     border: 1px solid gray;
-    width: 60px;
+    width: 120px;
     text-align: center;
     font-size: 1.2rem;
 }

@@ -25,6 +25,8 @@ namespace CowboyCafe.DataTests.UnitTests
         /// Special instructions for the mock item
         /// </summary>
         public List<string> SpecialInstructions { get; set; }
+
+        public uint Calories => throw new NotImplementedException();
     }
 
     /// <summary>
